@@ -17,15 +17,13 @@ function SEO({ description, lang, meta, title }) {
         site {
           siteMetadata {
             title
-            description
-            author
           }
         }
       }
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = description
 
   return (
     <Helmet
@@ -54,10 +52,6 @@ function SEO({ description, lang, meta, title }) {
         {
           name: `twitter:card`,
           content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
         },
         {
           name: `twitter:title`,
